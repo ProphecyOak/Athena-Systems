@@ -6,12 +6,10 @@ time.sleep(1)
 print('Hello ' + u + ' you can use the command() function to bring up a list of functions that are compatable with the network')
 commands = ['familiarName()', 'athImport()']
 def command():
-    commandLoc = 0
     print('Right now i can allow you to use these functions')
     time.sleep(1)
-    while commandLoc < len(commands):
-        print('the ' + commands[commandLoc] + ' function')
-        commandLoc += 1
+    for x in commmands:
+        print('the ' + x + ' function')
         time.sleep(1)
     
 #def familiarName():
