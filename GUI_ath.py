@@ -1,3 +1,4 @@
+import time
 from tkinter import*
 root = Tk()
 curLabels = []
@@ -5,7 +6,7 @@ curRow = 0
 def Talk(speech,x=0):
     global curLabels
     global curRow
-    curLabels.append(Label(text=speech))
+    curLabels.append(Label(root,text=speech))
     if curRow < 10:
         curLabels[-1].grid(row=curRow,column=0,sticky="w")
     else:
@@ -20,3 +21,4 @@ def Talk(speech,x=0):
     root.update()
 def Listen():
     pass
+    

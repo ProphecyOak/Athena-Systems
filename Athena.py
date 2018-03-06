@@ -1,4 +1,3 @@
-import time
 from GUI_ath import*
 
 u = 'User'
@@ -17,6 +16,7 @@ def familiarName(x=1):
     if x == 1:
         Talk('Ok, ' + u + ', what would you like me to do now?')
     
+    
 def athImport():
     Talk("Ok, for me to import something i need the module's name, and it needs to contain the compatible ATH tah for me to be able to utilize it.",1)
     time.sleep(3)
@@ -30,4 +30,4 @@ Talk('Welcome to the Athena Network.',1)
 familiarName(0)
 time.sleep(1)
 Talk('Hello ' + u + ' you can use the command() function to bring up a list of functions that are compatable with the network')
-    
+root.mainloop()
