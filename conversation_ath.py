@@ -1,5 +1,6 @@
-ConvoCommands = ['interests()']
-n = ConvoCommands
+import GlobalFile
+NewCommands = {"conversation_ath":['interests()']}
+n = NewCommands
 topics = {"Football":"Ball game where two teams try to carry the Football to the other team's endzone withot being tackled"}
 def commandConvo(x=1):
     print('from the Conversation notes, i can let you use these commands')
@@ -10,16 +11,17 @@ def commandConvo(x=1):
 
 def interests():
     #its asks athena 'what are your interests?'
-    print('honestly i havnt gotten the chance to do much, how about you ' + u)
-    interest = str(input('what interests you? ')
+    global topics
+    print('honestly i havnt gotten the chance to do much, how about you ' + GlobalFile.User)
+    interest = str(input('what interests you? '))
     topic = interest.find('ball')
     if topic != -1:
         answer = str(input('is that a sport? '))
         if answer == 'No':
             description = str(input('Oh cool, could you tell me about it? id like to take a note of this'))
-            name = str(input('also what was the name again? ')
+            name = str(input('also what was the name again? '))
             topics[name] = description
-        elif answer == 'yes'
+        elif answer == 'yes':
             name = str(input('what was the name again? '))
             if name in topics:
                 print('is it that one ' + name)
