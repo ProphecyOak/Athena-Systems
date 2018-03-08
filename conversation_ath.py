@@ -1,26 +1,33 @@
-ConvoCommands = ['interests()']
-n = ConvoCommands
-topics = {"Football":"Ball game where two teams try to carry the Football to the other team's endzone withot being tackled"}
-def commandConvo(x=1):
-    print('from the Conversation notes, i can let you use these commands')
-    for x in ConvoCommands:
-        print('the ' + x + ' function')
-    if x == 1:
-        print('Did you want to talk about something?')
+import GlobalFile
+GlobalFile.Commands["Conversation"] = ["interests()"]
+
+topics = {'sport':{"Football":"Ball game where two teams try to carry the Football to the other team's endzone withot being tackled"}}
+
 
 def interests():
     #its asks athena 'what are your interests?'
-    print('honestly i havnt gotten the chance to do much, how about you ' + u)
-    interest = str(input('what interests you? ')
+    print("Honestly I haven't gotten the chance to do much " + GlobalFile.User +".")
+    interest = str(input('What interests you?\n>>> ')
     topic = interest.find('ball')
     if topic != -1:
-        answer = str(input('is that a sport? '))
+        answer = str(input('Is that a sport?\n>>> '))
         if answer == 'No':
-            description = str(input('Oh cool, could you tell me about it? id like to take a note of this'))
-            name = str(input('also what was the name again? ')
-            topics[name] = description
+            description = str(input("Oh cool, could you tell me about it? I'd like to take a note of this.\n>>> "))
+            description = description.lower()
+            name = str(input('Also, what was the name again?\n>>> ')
+            topic = str(input('What kind of topic would you put this under?\n>>> '))
+            topic = topic.lower()
+            verify = topic.find('sport')
+            if verify not != -1:
+                print('hey that is a sport, or at least thats what ive been told')
+                    topic = 'sport'
+            topics[topic[name]] = description
         elif answer == 'yes'
-            name = str(input('what was the name again? '))
-            if name in topics:
-                print('is it that one ' + name)
-                
+            name = str(input('What was the name again?\n>>> '))
+            if name in topics[sport]:
+                print('Is it ' + name+"?")
+            elif name not in topics[sport]:
+                description = str(input("Could you tell me more, I'm not quite familiar with that.\n>>> ")
+                topics[name] = description
+                                  
+        
