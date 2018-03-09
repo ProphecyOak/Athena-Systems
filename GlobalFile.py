@@ -1,4 +1,7 @@
 def init():
-    global GlobalList
+    global Usaer
+    global Commands
+    global curRow
     User = "User"
-    Commands = {}
+    Commands = {"Athena":["athImport()","familiarName()"]}
+    curRow = 0
