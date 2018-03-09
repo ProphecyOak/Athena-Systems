@@ -1,23 +1,24 @@
 import time
+import GlobalFile
 from tkinter import*
 root = Tk()
-curLabels = []
-curRow = 0
 def Talk(speech,x=0):
-    global curLabels
-    global curRow
-    curLabels.append(Label(root,text=speech))
-    if curRow < 10:
-        curLabels[-1].grid(row=curRow,column=0,sticky="w")
+    GlobalFile.curLabels.append(Label(root,text=speech))
+    print(len(GlobalFile.curLabels))
+    if GlobalFile.curRow < 10:
+        GlobalFile.curLabels[-1].grid(row=GlobalFile.curRow,column=0,sticky="w")
     else:
-        curLabels = curLabels[1:]
-        for x in range(10):
-            curLabels[x].grid_forget()
-            curLabels[x].grid(row=x,column=0,sticky="w")
-        curLabels[-1].grid(row=10,column=0,sticky="w")
-    curRow += 1
+        GlobalFile.curLabels[0].grid_forget()
+        GlobalFile.curLabels = GlobalFile.curLabels[1:]
+        for y in range(10):
+            GlobalFile.curLabels[y].grid_forget()
+            GlobalFile.curLabels[y].grid(row=y,column=0,sticky="w")
+        GlobalFile.curLabels[-1].grid(row=11,column=0,sticky="w")
+    GlobalFile.curRow += 1
+    print(len(GlobalFile.curLabels))
     if x == 0:
-        Talk(" ",1)
+        Talk("",1)
+    print(len(GlobalFile.curLabels))
     root.update()
 def Listen():
     pass

@@ -1,6 +1,6 @@
 from GUI_ath import*
 import GlobalFile
-
+GlobalFile.init()
 def command():
     Talk('Right now I can allow you to use these functions:',1)
     Talk('The familiarName() function   -Changes user name',1)
@@ -22,7 +22,9 @@ def athImport():
         exec("import "+mod,globals())
         exec("global "+mod,globals())
         print("There we go, I've imported what you asked for, " + GlobalFile.User + '.')
+def initiate():
+    Talk('Welcome to the Athena Network.',1)
+    familiarName(0)
+    Talk('Hello ' + GlobalFile.User + ', you can use command() to bring up a list of functions that are compatable with the network')
 
-Talk('Welcome to the Athena Network.',1)
-familiarName(0)
-Talk('Hello ' + GlobalFile.User + ', you can use command() to bring up a list of functions that are compatable with the network')
+initiate()
